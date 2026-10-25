@@ -1,0 +1,14 @@
+[Unit]
+Description=My Java Application
+After=network.target mysql.service
+
+[Service]
+Type=simple
+User=lk
+WorkingDirectory=/home/lk/myapp
+ExecStart=/usr/bin/java -jar /home/lk/myapp/App.jar
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
